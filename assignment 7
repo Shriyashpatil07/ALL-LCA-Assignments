@@ -1,0 +1,34 @@
+#include &lt;stdio.h&gt;
+
+struct Component
+{
+int id;
+float weight;
+char material[50];
+};
+
+int main() {
+struct Component c[5];
+int i;
+printf(&quot;Enter details of 5 mechanical components:\n&quot;);
+
+for (i = 0; i &lt; 5; i++) {
+printf(&quot;\nComponent %d\n&quot;, i + 1);
+printf(&quot;Enter Component ID: &quot;);
+scanf(&quot;%d&quot;, &amp;c[i].id);
+
+printf(&quot;Enter Weight (kg): &quot;);
+scanf(&quot;%f&quot;, &amp;c[i].weight);
+
+printf(&quot;Enter Material Type: &quot;);
+scanf(&quot;%49s&quot;, c[i].material);
+}
+
+printf(&quot;\n--- Mechanical Component Details ---\n&quot;);
+printf(&quot;ID\tWeight(kg)\tMaterial\n&quot;);
+
+for (i = 0; i &lt; 5; i++) {
+printf(&quot;%d\t%.2f\t\t%s\n&quot;,
+c[i].id, c[i].weight, c[i].material); }
+
+return 0; }
